@@ -6,12 +6,22 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-//When start
+//Start by key
 $(document).keydown(function () {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
+  }
+});
+
+//Start by button
+$(".btn-start").click(function () {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+    $(".btn-start").hide();
   }
 });
 
@@ -29,7 +39,7 @@ $(".btn").click(function () {
 function checkAnswer(currentLevel) {
   if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
     if (userClickedPattern.length === gamePattern.length) {
-      $("#level-title").text("Success");
+      $("#level-title").text("Correct");
       setTimeout(function () {
         nextSequence();
       }, 1200);
@@ -44,6 +54,7 @@ function checkAnswer(currentLevel) {
       $("body").removeClass("game-over");
     }, 200);
 
+    $(".btn-start").show();
     startOver();
   }
 }
