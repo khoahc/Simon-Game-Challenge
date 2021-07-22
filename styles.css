@@ -2,6 +2,7 @@
   margin: 0;
 }
 body {
+  padding: auto;
   text-align: center;
   display: block;
   font-family: 'Press Start 2P', cursive;
@@ -9,15 +10,47 @@ body {
 }
 
 #level-title {
-  font-size: 3.125rem;
+  line-height: 1.25;
+  font-size: 3rem;
   margin:  3%;
   color: #FEF2BF;
 }
 
-.container {
-  display: block;
-  width: 50%;
+.container{
+  position: relative;
+  margin: 5% 10%;  
+}
+.box {
+  width: 100%;
+  height: 60vh;
   margin: auto;
+  position: absolute;
+}
+
+.start{
+  background-color: rgb(6, 12, 39);
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+.btn-start {
+  padding: 0;
+  margin: auto auto;
+  height: 90px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 10%;
+  font-size: 2rem;
+  font-family: 'Press Start 2P', cursive;
+  /* background-color: #011F3F; */
+  background-color: blue;
+  color: #FEF2BF;
+}
+.btn-start:hover{
+  background-color: red;
 }
 
 .btn {
@@ -55,17 +88,3 @@ body {
   background-color: grey;
 }
 
-.btn-start {
-  margin: 3%;
-  height: 90px;
-  width: 200px;
-  border: 2px solid black;
-  border-radius: 10%;
-  font-size: 2rem;
-  font-family: 'Press Start 2P', cursive;
-  background-color: #011F3F;
-  color: #FEF2BF;
-}
-.btn-start:hover{
-  background-color: red;
-}
